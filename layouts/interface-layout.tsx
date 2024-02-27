@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
+import { classnames } from "@/utils/classnames";
 
 export default function InterfaceLayout({
   children,
@@ -19,28 +21,27 @@ export default function InterfaceLayout({
     }
   }
   return (
-    <div>
-      <div className="flex min-h-screen w-full flex-col bg-gray-50 dark:bg-gray-950 dark:text-white text-black">
-        <Header sidebarIsOpen={sidebarOpen} sidebarToggle={toggleSideBar} />
+    <div className="flex min-h-screen  overflow-hidden w-full bg-gray-50 dark:bg-dark dark:text-white text-black ">
+      <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSideBar} />
+      {/* <Toaster position="top-center" reverseOrder={false} /> */}
+      <div
+        className={classnames(
+          "w-full"
+          // sidebarOpen && "opacity-0 pointer-none !lg:opacity-100"
+        )}
+        style={sidebarOpen ? { opacity: 0.5 } : {}}
+        onClick={() => sidebarOpen && toggleSideBar()}
+      >
+        <Header sidebarOpen={sidebarOpen} sidebarToggle={toggleSideBar} />
 
-        {/* <Toaster position="top-center" reverseOrder={false} /> */}
-        <div className="flex flex-1">
-          {/* <Sidebar sidebarIsOpen={sidebarIsOpen} />
-           */}
-          sidebar
-          <main
-            style={{}}
-            className={`flex w-full flex-col ${
-              sidebarOpen
-                ? "main-content-sidebar-open"
-                : "main-content-sidebar-closed"
-            }`}
-          >
-            {children}
-          </main>
-        </div>
-        {/* <BottomNavigation /> */}
+        <main
+          style={{}}
+          className={classnames("flex flex-col lg:main-content-lg pt-16")}
+        >
+          <div className="pl-96">{children}</div>
+        </main>
       </div>
+      {/* <BottomNavigation /> */}
       {/* <ModalContainer /> */}
       {/* <DrawersContainer /> */}
     </div>

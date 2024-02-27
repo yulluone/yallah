@@ -6,12 +6,7 @@ interface HamburgerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Hamburger({ sidebarIsOpen, ...props }: HamburgerProps) {
   return (
-    <Button
-      variant="icon"
-      aria-label="Hamburger"
-      {...props}
-      className="text-white dark:"
-    >
+    <Button variant="icon" aria-label="Hamburger" {...props} className="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

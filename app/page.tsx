@@ -1,5 +1,18 @@
 import Image from "next/image";
 
 export default function Home() {
-  return <div className="flex flex-col min-h-screen">Hello</div>;
+  return (
+    <div className="text-dark-500">
+      <div>
+        Hello HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello Hello
+        Hello Hello Hello Hello
+      </div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+      <div>Hello</div>
+    </div>
+  );
 }
