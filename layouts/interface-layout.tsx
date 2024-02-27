@@ -21,24 +21,31 @@ export default function InterfaceLayout({
     }
   }
   return (
-    <div className="flex min-h-screen  overflow-hidden w-full bg-gray-50 dark:bg-dark dark:text-white text-black ">
+    <div className=" flex min-h-screen w-full  flex-col bg-gray-50 dark:bg-dark dark:text-white text-black ">
+      {/* fixed */}
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSideBar} />
+      <Header sidebarOpen={sidebarOpen} sidebarToggle={toggleSideBar} />
       {/* <Toaster position="top-center" reverseOrder={false} /> */}
-      <div
-        className={classnames(
-          "w-full"
-          // sidebarOpen && "opacity-0 pointer-none !lg:opacity-100"
-        )}
-        style={sidebarOpen ? { opacity: 0.5 } : {}}
-        onClick={() => sidebarOpen && toggleSideBar()}
-      >
-        <Header sidebarOpen={sidebarOpen} sidebarToggle={toggleSideBar} />
-
+      {/* main content */}
+      <div className="flex flex-1">
         <main
           style={{}}
-          className={classnames("flex flex-col lg:main-content-lg pt-16")}
+          className={`flex w-full flex-col pt-16 lg:pl-[300px] ${
+            sidebarOpen
+              ? "main-content-sidebar-open"
+              : "main-content-sidebar-closed"
+          }`}
         >
-          <div className="pl-96">{children}</div>
+          {children}
+          <style>
+            {`
+          @media (min-width: 1024px) {
+            .lg\\:pl-\\[300px\\] {
+              padding-left: 300px;
+            }
+          }
+        `}
+          </style>
         </main>
       </div>
       {/* <BottomNavigation /> */}
