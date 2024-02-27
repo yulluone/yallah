@@ -13,7 +13,7 @@ export default function Header({ sidebarIsOpen, sidebarToggle }: HeaderProps) {
   const pathname = usePathname();
 
   return (
-    <div className="app-header sticky left-0 top-0 z-30 flex h-16   w-full items-center justify-between bg-light px-4 py-1  dark:bg-dark-100 sm:h-[70px] sm:px-6">
+    <div className="app-header sticky left-0 top-0 z-30 flex h-16   w-full items-center justify-between bg-light-100 px-4 py-1  dark:bg-dark-100 sm:h-[70px] sm:px-6">
       <div className="flex items-center gap-4">
         {/* <Hamburger
           className="hidden sm:flex"
@@ -22,7 +22,9 @@ export default function Header({ sidebarIsOpen, sidebarToggle }: HeaderProps) {
         /> */}
 
         <Link href="/">
-          <span className="text-2xl font-medium">Yala Finance</span>
+          <span className="text-xl font-medium transition-all duration-200 text-dark-200 dark:text-light-200 hover:text-dark-200 dark:hover:text-light-600">
+            Yala Finance
+          </span>
         </Link>
       </div>
 

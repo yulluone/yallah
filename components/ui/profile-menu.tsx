@@ -9,6 +9,7 @@ import ActiveLink from "./active-link";
 import { useRecoilValue } from "recoil";
 import { userState } from "@/recoil/atoms";
 import { UserIcon } from "./icons/user-icon";
+import Button from "./button";
 
 const AuthorizedMenuItems = [
   {
@@ -24,8 +25,10 @@ const AuthorizedMenuItems = [
 function AuthorizedMenu({ user }: any) {
   return (
     <ProfileDropDown>
-      <ProfileDropDown.Button className="relative inline-flex justify-center">
-        <UserIcon className="h-5 w-5" />
+      <ProfileDropDown.Button className="relative inline-flex justify-center ">
+        <Button variant="icon">
+          <UserIcon className="h-5 w-5" />
+        </Button>
       </ProfileDropDown.Button>
       <Transition
         as={Fragment}
