@@ -1,35 +1,52 @@
 import Image from "next/image";
+import { ExpensesChart } from "@/components/ui/bar-chart";
+
+const data = [
+  {
+    USD: 10000,
+    title: "Monthly Expenses",
+    KES: 30000,
+  },
+  {
+    title: "Annual Expenses",
+    USD: 10000,
+    KES: 30000,
+  },
+  {
+    title: "Annual Income",
+    USD: 10000,
+    KES: 30000,
+  },
+  {
+    title: "Annual Profits",
+    USD: 10000,
+    KES: 30000,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="text-dark-500 ">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex-shrink-0">
-          <span className="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">
-            $45,385
-          </span>
-          <h3 className="text-base font-light text-gray-500 dark:text-gray-400">
-            Sales this week
-          </h3>
-        </div>
-        <div className="flex items-center justify-end flex-1 text-base font-medium text-green-500 dark:text-green-400">
-          12.5%
-          <svg
-            className="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
+    <div className="p-5 flex flex-col gap-7 h-screen">
+      <h1 className="text-xl lg:text-3xl p-2 font-medium lg:font-bold sticky md:block md:z-10 min-h-16 md:justify-start justify-center flex items-center z-30 top-0">
+        Dashboard
+      </h1>
+
+      {/* expenses & profits cards */}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 z-10 ">
+        {data.map((item, index) => (
+          <div className="bg-light-200 dark:bg-dark-200 p-5 flex flex-col rounded-xl">
+            <h3 className="text-sm opacity-75">{item.title}</h3>
+            <div className="flex flex-col gap-2 mt-3">
+              <span className="text-2xl font-medium">USD: {item.USD}</span>
+              <span className="text-brand text-sm">KES: {item.KES}</span>
+            </div>
+          </div>
+        ))}
+        <div className="bg-light-200 dark:bg-dark-200 p-5 flex flex-col rounded-xl">
+          <ExpensesChart className="text-current" />
         </div>
       </div>
-
-      <div>Hello</div>
     </div>
   );
 }

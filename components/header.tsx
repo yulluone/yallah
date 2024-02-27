@@ -16,7 +16,7 @@ export default function Header({ sidebarOpen, sidebarToggle }: HeaderProps) {
   return (
     <div
       className={classnames(
-        "app-header absolute left-0 top-0 flex h-16 w-full items-center justify-between bg-light-300 px-4 py-1  dark:bg-dark-100 border-light-600 dark:border-dark-300 border-b-[0.5px]"
+        "app-header fixed left-0 top-0 z-20 flex h-16 w-full items-center justify-between bg-light-300 px-4 py-1  dark:bg-dark-100 border-light-600 dark:border-dark-300 border-b-[0.5px]"
       )}
     >
       <div className="flex items-center gap-4">
