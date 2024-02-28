@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { ExpensesChart } from "@/components/ui/bar-chart";
+import { IncomeChart } from "@/components/ui/income-chart";
+import { ProfitChart } from "@/components/ui/profit-chart";
 
 const data = [
   {
@@ -44,7 +46,11 @@ export default function Home() {
           </div>
         ))}
         <div className="bg-light-200 dark:bg-dark-200 p-5 flex flex-col rounded-xl">
-          <ExpensesChart className="text-current" />
+          <IncomeChart className="text-current" />
+        </div>
+
+        <div className="bg-light-200 dark:bg-dark-200 p-5 flex flex-col rounded-xl">
+          <ProfitChart className="text-current" />
         </div>
       </div>
     </div>
