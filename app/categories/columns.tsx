@@ -14,18 +14,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type User = {
+export type Category = {
   id: number;
   name: string;
-  email: string;
-  verified_at: Date;
+  description: string;
+  type: string;
+  created_at: Date;
+  updated_at: Date;
 };
 
-export const columns: ColumnDef<User>[] = [
+export const columns: ColumnDef<Category>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -54,12 +57,9 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: "id",
     header: () => <div className="text-left">Id</div>,
   },
+
   {
     accessorKey: "name",
-    header: () => <div className="text-left">Name</div>,
-  },
-  {
-    accessorKey: "email",
     header: ({ column }) => {
       return (
         <Button
@@ -67,15 +67,28 @@ export const columns: ColumnDef<User>[] = [
           className="text-dark-600 dark:text-light-600"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Name
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
   },
+
   {
-    accessorKey: "verified_at",
-    header: "Verified At",
+    accessorKey: "description",
+    header: () => <div className="text-left">Description</div>,
+  },
+  {
+    accessorKey: "type",
+    header: () => <div className="text-left">Type</div>,
+  },
+  {
+    accessorKey: "created_at",
+    header: () => <div className="text-left">Created At</div>,
+  },
+  {
+    accessorKey: "updated_at",
+    header: () => <div className="text-left">Created At</div>,
   },
 
   {

@@ -46,19 +46,21 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   filterBy?: string;
+  columnVis?: VisibilityState;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   filterBy,
+  columnVis = {},
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({ id: false });
+    React.useState<VisibilityState>(columnVis);
   console.log(columnVisibility);
 
   const table = useReactTable({

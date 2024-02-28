@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import { classnames } from "@/utils/classnames";
+import { Toaster } from "react-hot-toast";
 
 export default function InterfaceLayout({
   children,
@@ -26,7 +27,7 @@ export default function InterfaceLayout({
       {/* fixed */}
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSideBar} />
       <Header sidebarOpen={sidebarOpen} sidebarToggle={toggleSideBar} />
-      {/* <Toaster position="top-center" reverseOrder={false} /> */}
+      <Toaster position="top-center" reverseOrder={false} />
       {/* main content */}
 
       <div
