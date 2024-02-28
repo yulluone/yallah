@@ -11,7 +11,7 @@ export default function AddUser() {
     toast.success("User added successfully");
     setTimeout(() => {
       router.push("/users");
-    });
+    }, 1000);
   }
   return (
     <div className="	p-5 pt-16  flex flex-col gap-2  h-full">
@@ -22,7 +22,7 @@ export default function AddUser() {
         {/* add user form */}
 
         {/* form */}
-        <form className="flex flex-col gap-4">
+        <form className="flex flex-col gap-4" action={submit}>
           <div className="flex gap-4">
             <div className="flex flex-col gap-2 w-full 	">
               <label htmlFor="first_name" className="text-sm">
@@ -53,7 +53,7 @@ export default function AddUser() {
               <Input
                 type="email"
                 name="email"
-                placeholder="First Name"
+                placeholder="Your Email"
                 id="email"
               />
             </div>
@@ -62,7 +62,7 @@ export default function AddUser() {
               <label htmlFor="password" className="text-sm">
                 Password <span className="text-red-500">*</span>
               </label>
-              <Input type="password" placeholder="Last Name" id="password" />
+              <Input type="password" placeholder="Password" id="password" />
             </div>
           </div>
           <div>
