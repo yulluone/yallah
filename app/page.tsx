@@ -49,11 +49,11 @@ export default function Home() {
           </div>
         ))}
         <div className="bg-light-200 dark:bg-dark-200 text-white p-5 flex flex-col rounded-xl">
-          <IncomeChart className="text-current" />
+          <IncomeChart />
         </div>
 
-        <div className="bg-light-200 dark:bg-dark-200 p-5 flex flex-col rounded-xl">
-          <ProfitChart className="text-current" />
+        <div className="bg-light-200 dark:bg-dark-200 text-white p-5 flex flex-col rounded-xl">
+          <ProfitChart />
         </div>
       </div>
     </div>
