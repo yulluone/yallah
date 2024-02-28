@@ -21,7 +21,7 @@ export default async function UsersPage() {
         <DataTable
           columns={columns}
           data={data}
-          filterBy="email"
+          filterBy="name"
           key="users-table"
           columnVis={{
             id: false,
