@@ -10,8 +10,7 @@ type IncomeChartProps = {
 export function IncomeChart({ className }: IncomeChartProps) {
   return (
     <BarChart
-      // className={className}
-
+      className="stroke-inherit"
       title="Income Chart"
       xAxis={[{ scaleType: "band", data: ["Expenses", "Income"] }]}
       series={[

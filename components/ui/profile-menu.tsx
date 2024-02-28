@@ -14,11 +14,7 @@ import Button from "./button";
 const AuthorizedMenuItems = [
   {
     label: "Profile",
-    href: "/user/profile",
-  },
-  {
-    label: "Orders",
-    href: "/user/orders",
+    href: "/",
   },
 ];
 
@@ -39,7 +35,7 @@ function AuthorizedMenu({ user }: any) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <ProfileDropDown.Items className="absolute top-[84%] z-30 mt-4 w-56 rounded-md bg-light py-1.5 text-dark shadow-dropdown right-0 origin-top-right  dark:bg-dark-250 dark:text-light">
+        <ProfileDropDown.Items className="absolute z-60 top-[84%] mt-4 w-56 rounded-md bg-light py-1.5 text-dark shadow-dropdown right-0 origin-top-right  dark:bg-dark-250 dark:text-light">
           {AuthorizedMenuItems.map((item) => (
             <ProfileDropDown.Item key={item.href}>
               <ActiveLink

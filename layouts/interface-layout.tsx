@@ -31,7 +31,7 @@ export default function InterfaceLayout({
         position="top-center"
         reverseOrder={false}
         toastOptions={{
-          className: "dark:bg-dark-500",
+          className: "dark:bg-dark-500 dark:text-light",
         }}
       />
       {/* main content */}
