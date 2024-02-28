@@ -43,12 +43,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }: sidebarProps) {
   return (
     <aside
       className={classnames(
-        "flex-col fixed z-30  top-0 left-0 justify-between overflow-y-auto bg-light-300 min-w-screen text-dark-900  dark:bg-dark-100 transition-transform	h-full lg:min-h-screen  lg:translate-x-0 min-w-[300px]",
+        "flex-col fixed z-30  top-0 left-0 justify-between overflow-y-auto bg-light-100 min-w-screen text-dark-900  dark:bg-dark-100 transition-transform	h-full lg:min-h-screen  lg:translate-x-0 min-w-[300px]",
         sidebarOpen ? "translate-x-0" : "translate-x-[-320px]"
       )}
     >
       <div
-        className="h-16 flex px-5 justify-between items-center border-light-600 dark:border-dark-300 border-b-[0.5px]"
+        className="h-16 flex px-5 justify-between items-center border-light-600 bg-light dark:bg-dark-200 dark:border-dark-300 border-b-[0.5px]"
         onClick={toggleSidebar}
       >
         <Link href="/" className="">
