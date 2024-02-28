@@ -183,7 +183,7 @@ export function DataTable<TData, TValue>({
             </>
           )}
         </div>
-        <div className="flex items-center space-x-6 lg:space-x-8">
+        <div className="  flex items-center space-x-6 lg:space-x-8">
           <div className="flex items-center space-x-2">
             <p className="text-sm font-medium">Rows per page</p>
             <Select

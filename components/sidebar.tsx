@@ -43,7 +43,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }: sidebarProps) {
   return (
     <aside
       className={classnames(
-        "flex-col fixed z-30  top-0 left-0 justify-between overflow-y-auto bg-light-100 min-w-screen text-dark-900  dark:bg-dark-100 transition-transform	h-full lg:min-h-screen  lg:translate-x-0 min-w-[300px]",
+        "flex-col z-50 fixed   top-0 left-0 justify-between overflow-y-auto bg-light-100 min-w-screen text-dark-900  dark:bg-dark-100 transition-transform	h-full lg:min-h-screen  lg:translate-x-0 min-w-[300px]",
         sidebarOpen ? "translate-x-0" : "translate-x-[-320px]"
       )}
     >

@@ -27,12 +27,18 @@ export default function InterfaceLayout({
       {/* fixed */}
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSideBar} />
       <Header sidebarOpen={sidebarOpen} sidebarToggle={toggleSideBar} />
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          className: "dark:bg-dark-500",
+        }}
+      />
       {/* main content */}
 
       <div
         style={{}}
-        className={` w-full pt-16 px-5 lg:pl-[300px] ${
+        className={` w-full !pt-16 px-5 lg:pl-[300px] ${
           sidebarOpen
             ? "main-content-sidebar-open"
             : "main-content-sidebar-closed"
